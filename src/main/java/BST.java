@@ -16,13 +16,13 @@ public class BST {
             while (!queue.isEmpty()) {
                 Node current = queue.removeFirst();
                 
-                if(height(current) != -1 || height(current) != 0 || height(current) != 1) return false;
+                if(Math.abs(balance(current)) > 1) return false;
                 
                 if(current.left != null) 
                     queue.addLast(current.left);
                 if(current.right != null) 
                     queue.addLast(current.right);   
-            	}
+            		}	
         	}
         return true;
     	
